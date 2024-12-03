@@ -1,0 +1,220 @@
+/* 全局样式 */
+body, html {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    overflow: hidden;
+}
+
+/* Swiper 样式 */
+.swiper-container {
+    width: 100%;
+    height: 100%;
+}
+
+.swiper-slide {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+    background-size: contain;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-color: #d2b17d;
+    transition: background-image 0.5s ease-in-out;
+    
+}
+
+/* 内容样式 */
+.content {
+    text-align: center;
+    color: white;
+}
+
+/* 按钮样式 */
+button {
+    padding: 10px 20px;
+    background-color: rgba(255, 255, 255, 0.8);
+    border: none;
+    cursor: pointer;
+    border-radius: 5px;
+    font-size: 1em;
+}
+
+button:hover {
+    background-color: rgba(255, 255, 255, 1);
+}
+
+/* 毛笔样式 */
+.draggable {
+    position: absolute;
+    width: 100px;
+    height: 100px;
+    cursor: grab;
+}
+
+.draggable img {
+    width: 100%;
+    height: 100%;
+}
+
+/* 目标区域的图片样式 */
+.target-img {
+    position: relative;
+    width: 200px;
+    height: 200px;
+    margin-top: 50px;
+    overflow: hidden; /* 防止图片溢出容器 */
+}
+
+/* 图片样式 */
+.target-img img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    transition: opacity 0.5s ease;
+}
+
+/* 初始状态：隐藏 transformed 图片 */
+.transformed {
+    display: none;
+}
+
+/* 图片容器样式 */
+.image-container-start {
+    position: relative;
+    width: 100%;  /* 容器宽度根据需要调整 */
+    height: 230px;  /* 容器高度，假设是300px，你可以调整 */
+    display: inline-block;
+}
+
+/* 背景图片样式 */
+.image-background {
+    padding-top: 110%;  /* 保持容器高宽比例 */
+    width: 100%;  /* 图片宽度占满容器 */
+    height: 100%; /* 图片高度占满容器 */
+    object-fit: cover; /* 确保图片按比例填充容器 */
+}
+
+/* 按钮样式 */
+.jump-page-btn {
+    position: absolute;   /* 绝对定位 */
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: transparent;  /* 背景透明 */
+    border: none;              /* 去掉边框 */
+    cursor: pointer;          /* 鼠标悬停时显示手型 */
+    opacity: 0;                /* 使按钮完全透明 */
+}
+
+/* 点击时的样式，可以根据需要进行微调 */
+.jump-page-btn:active {
+    opacity: 0.5;  /* 点击时给按钮一点可见反馈，保持透明 */
+}
+
+/* 虚拟按钮样式 */
+.virtual-btn {
+    position: absolute;   /* 绝对定位 */
+    width: 200px;          /* 设置按钮宽度 */
+    height: 50px;          /* 设置按钮高度 */
+    background-color: rgba(255, 255, 255, 0.5);  /* 透明背景 */
+    border: none;
+    border-radius: 5px;
+    opacity: 0;            /* 隐藏按钮 */
+    cursor: pointer;
+}
+.virtual-btn-make {
+    position: absolute;   /* 绝对定位 */
+    width: 400px;          /* 设置按钮宽度 */
+    height: 100%;          /* 设置按钮高度 */
+    background-color: rgba(255, 255, 255, 0.5);  /* 透明背景 */
+    border: none;
+    border-radius: 5px;
+    opacity: 0;            /* 隐藏按钮 */
+    cursor: pointer;
+    top: 80%;
+    left: 10%;
+}
+.virtual-btn-make2 {
+    position: absolute;   /* 绝对定位 */
+    width: 400px;          /* 设置按钮宽度 */
+    height: 100%;          /* 设置按钮高度 */
+    background-color: rgba(255, 255, 255, 0.5);  /* 透明背景 */
+    border: none;
+    border-radius: 5px;
+    opacity: 0;            /* 隐藏按钮 */
+    cursor: pointer;
+    top: 80%;
+    right:30%;
+}
+
+/* 按钮的布局：我们可以使用 grid 或 flexbox 来控制按钮布局 */
+.contentfp2 {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);  /* 创建三个均等的列 */
+    gap: 20px;  /* 设置按钮间距 */
+    align-items: center;  /* 垂直居中按钮 */
+    justify-items: center;  /* 水平居中按钮 */
+}
+
+/* 第一个虚拟按钮位置 */
+.virtual-btn:nth-child(1) {
+    top: 40%;
+    left: 25%;
+}
+
+/* 第二个虚拟按钮位置 */
+.virtual-btn:nth-child(2) {
+    top: 53%;
+    left: 25%;
+}
+
+/* 第三个虚拟按钮位置 */
+.virtual-btn:nth-child(3) {
+    bottom: 27%;
+    left: 25%;
+}
+
+/* 横向滑动容器 */
+.swiper-container-horizontal {
+    width: 100%;  /* 容器宽度为 100% */
+    height: 300px; /* 容器高度 */
+}
+
+/* 横向滑动项 */
+.swiper-slide-horizontal {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 300px;  /* 每个滑动项的宽度 */
+    height: 100%;   /* 高度占满容器 */
+}
+
+/* 内容样式（图片和文本） */
+.swiper-slide-horizontal .content {
+    text-align: center;
+}
+
+.swiper-slide-horizontal img {
+    width: 100%;
+    height: auto;  /* 图片自适应容器 */
+    border-radius: 10px;
+}
+
+/* 分页器、按钮样式（可选） */
+.swiper-pagination-horizontal {
+    position: absolute;
+    bottom: 10px;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.swiper-button-next-horizontal, .swiper-button-prev-horizontal {
+    color: #fff;  /* 导航按钮颜色 */
+}
+
